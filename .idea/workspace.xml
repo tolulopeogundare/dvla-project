@@ -3,12 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="77fe5b63-5083-4170-88ec-5b980f3ba8a7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dvla/project/Files_Service/FilesReader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dvla/project/Files_Service/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dvla/project/Files_Service/FileLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/resources/Files/VRM excel data2.xls" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/resources/Files/VRM excel data2.xls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/dvla/project/StepsDefinition/VRMVerificationSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/dvla/project/StepsDefinition/VRMVerificationSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/dvla/project/Utility/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/dvla/project/Utility/Utility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/features/VehicleVerification.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/features/VehicleVerification.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dvla/project/Files_Service/FileLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dvla/project/Files_Service/FileLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dvla/project/Files_Service/FilesReader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dvla/project/Files_Service/Runner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/dvla/project/Helpers/WebDriverHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/dvla/project/Helpers/WebDriverHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/dvla/project/StepsDefinition/VRMVerificationSteps.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/dvla/project/StepsDefinition/VRMVerificationSteps.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/dvla/project/Utility/Utility.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/dvla/project/Utility/Utility.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,16 +19,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/dvla/project/Files_Service/FileLoader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
-              <caret line="17" column="19" lean-forward="true" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+            <state relative-caret-position="318">
+              <caret line="85" column="89" lean-forward="true" selection-start-line="85" selection-start-column="89" selection-end-line="85" selection-end-column="89" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -44,7 +49,7 @@
         <entry file="file://$PROJECT_DIR$/src/test/java/features/VehicleVerification.feature">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
-              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
             </state>
           </provider>
         </entry>
@@ -53,7 +58,7 @@
         <entry file="file://$PROJECT_DIR$/src/test/java/com/dvla/project/StepsDefinition/VRMVerificationSteps.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="412">
-              <caret line="50" column="5" lean-forward="true" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+              <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#621#622#0" expanded="true" />
@@ -69,7 +74,7 @@
         <entry file="file://$PROJECT_DIR$/src/test/java/com/dvla/project/Utility/Utility.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-285">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1053#1054#0" expanded="true" />
@@ -83,7 +88,7 @@
         <entry file="file://$PROJECT_DIR$/src/test/java/com/dvla/project/Pages/HomePage.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#446#447#0" expanded="true" />
@@ -97,7 +102,7 @@
         <entry file="file://$PROJECT_DIR$/src/test/java/com/dvla/project/Pages/VRMPage.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+              <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#373#374#0" expanded="true" />
@@ -111,7 +116,7 @@
         <entry file="file://$PROJECT_DIR$/src/test/java/com/dvla/project/Pages/ConfirmVehiclePage.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
-              <caret line="19" column="38" lean-forward="true" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
+              <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -123,7 +128,7 @@
         <entry file="file://$PROJECT_DIR$/src/test/java/com/dvla/project/Helpers/WebDriverHelper.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-272">
-              <caret line="25" column="6" lean-forward="true" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
+              <caret line="25" column="6" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -293,7 +298,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556722246454" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556722698319" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
@@ -405,16 +410,17 @@
       <option name="project" value="LOCAL" />
       <updated>1556714913264</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="updated tests">
+      <created>1556722266488</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1556722266488</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Feature__VRM-Verification - 2019.05.01 at 13h 45m 26s.xml">
-      <configuration name="Feature: VRM-Verification" configurationId="CucumberJavaRunConfigurationType" />
-    </history-entry>
-    <history-entry file="Feature__VRM-Verification - 2019.05.01 at 13h 46m 09s.xml">
-      <configuration name="Feature: VRM-Verification" configurationId="CucumberJavaRunConfigurationType" />
-    </history-entry>
     <history-entry file="Feature__VRM-Verification - 2019.05.01 at 14h 06m 28s.xml">
       <configuration name="Feature: VRM-Verification" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
@@ -439,6 +445,12 @@
     <history-entry file="Feature__VRM-Verification - 2019.05.01 at 15h 46m 25s.xml">
       <configuration name="Feature: VRM-Verification" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
+    <history-entry file="Feature__VRM-Verification - 2019.05.01 at 15h 52m 30s.xml">
+      <configuration name="Feature: VRM-Verification" configurationId="CucumberJavaRunConfigurationType" />
+    </history-entry>
+    <history-entry file="Feature__VRM-Verification - 2019.05.01 at 15h 57m 17s.xml">
+      <configuration name="Feature: VRM-Verification" configurationId="CucumberJavaRunConfigurationType" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -457,7 +469,7 @@
       <window_info anchor="bottom" id="Version Control" order="3" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="6" visible="true" weight="0.47995666" />
+      <window_info anchor="bottom" id="Run" order="6" visible="true" weight="0.3856988" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -475,7 +487,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added data retrieval from webpage" />
     <MESSAGE value="updated test" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated test" />
+    <MESSAGE value="updated tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated tests" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/poi/poi-ooxml/3.15/poi-ooxml-3.15.jar!/org/apache/poi/ss/usermodel/WorkbookFactory.class">
@@ -511,14 +524,14 @@
     <entry file="file://$PROJECT_DIR$/src/test/java/features/VehicleVerification.feature">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/dvla/project/StepsDefinition/VRMVerificationSteps.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="412">
-          <caret line="50" column="5" lean-forward="true" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+          <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#621#622#0" expanded="true" />
@@ -532,7 +545,7 @@
     <entry file="file://$PROJECT_DIR$/src/test/java/com/dvla/project/Utility/Utility.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-285">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1053#1054#0" expanded="true" />
@@ -544,7 +557,7 @@
     <entry file="file://$PROJECT_DIR$/src/test/java/com/dvla/project/Pages/HomePage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#446#447#0" expanded="true" />
@@ -556,7 +569,7 @@
     <entry file="file://$PROJECT_DIR$/src/test/java/com/dvla/project/Pages/VRMPage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#373#374#0" expanded="true" />
@@ -568,7 +581,7 @@
     <entry file="file://$PROJECT_DIR$/src/test/java/com/dvla/project/Pages/ConfirmVehiclePage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
-          <caret line="19" column="38" lean-forward="true" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
+          <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -578,7 +591,7 @@
     <entry file="file://$PROJECT_DIR$/src/test/java/com/dvla/project/Helpers/WebDriverHelper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-272">
-          <caret line="25" column="6" lean-forward="true" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
+          <caret line="25" column="6" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -604,13 +617,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/dvla/project/Files_Service/FileLoader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="17" column="19" lean-forward="true" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+        <state relative-caret-position="318">
+          <caret line="85" column="89" lean-forward="true" selection-start-line="85" selection-start-column="89" selection-end-line="85" selection-end-column="89" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
   <component name="masterDetails">

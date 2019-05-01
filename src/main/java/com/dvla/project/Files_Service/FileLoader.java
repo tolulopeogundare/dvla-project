@@ -24,8 +24,6 @@ public class FileLoader {
     private List<String> supportedMimeTypes = Arrays.asList("application/vnd.ms-excel", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "application/octet-stream");
 
     public List<File> getCsvFilesFromDirectory(File directory){
-        final long startTime = System.currentTimeMillis();
-
         List<File> collectedFiles = new ArrayList<>();
         Deque<File> remainingDirs = new ArrayDeque<>();
         if(directory.exists()) {
@@ -47,8 +45,6 @@ public class FileLoader {
                     } else {
                         LOGGER.info(String.format("Ignoring unsupported file %s", file.getName()));
                     }
-                    final long elapsedTime = System.currentTimeMillis() - startTime;
-                    LOGGER.info(String.format("Processed %s files in %s ms", String.valueOf(filesInDir.size()), elapsedTime));
                 }
             }
         }
@@ -61,6 +57,7 @@ public class FileLoader {
     }
 
     public void loadAllFiles(){
+        final long startTime = System.currentTimeMillis();
         File directory = new File(System.getProperty("user.dir") + "/src/main/java/resources/Files");
         LOGGER.info(String.format("Loading files from directory - %s", directory.getAbsolutePath()));
         int supportedFiles = 0;
@@ -81,7 +78,8 @@ public class FileLoader {
                 e.printStackTrace();
             }
         }
-        LOGGER.info(String.format("File loading complete. %s supported files loaded | %s unsupported files ignored", supportedFiles, unsupportedFiles));
+        final long elapsedTime = System.currentTimeMillis() - startTime;
+        LOGGER.info(String.format("Processed %s files in %s ms. %s supported files loaded | %s unsupported files ignored", (supportedFiles + unsupportedFiles), elapsedTime, supportedFiles, unsupportedFiles));
     }
 
     private static void readCsvFiles(final File file) throws IOException {
