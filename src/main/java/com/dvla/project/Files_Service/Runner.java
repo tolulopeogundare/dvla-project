@@ -42,7 +42,7 @@ public class Runner {
     private static void readCsvFiles(final File file) throws IOException {
         try (BOMInputStream bis = new BOMInputStream(new FileInputStream(file), false)) {
             List<String> csvData = IOUtils.readLines(bis, StandardCharsets.UTF_8);
-
+            csvData.remove(0);
             for(String value : csvData){
                 String [] values;
                 String [] info = new String [2];

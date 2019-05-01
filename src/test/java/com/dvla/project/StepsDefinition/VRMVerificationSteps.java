@@ -40,7 +40,10 @@ public class VRMVerificationSteps {
             Map<String, String[]> expectedVehicleInformation = new TreeMap<>();
             Map<String, String[]> actualVehicleInformation = utility.findACarInformation(VRM.toString());
             expectedVehicleInformation.put(VRM.toString(), vehicles.get(VRM.toString()));
-            Assert.assertEquals(actualVehicleInformation, expectedVehicleInformation);
+
+            Assert.assertTrue(actualVehicleInformation.containsKey(VRM.toString()));
+            Assert.assertEquals(expectedVehicleInformation.get(VRM)[0], actualVehicleInformation.get(VRM)[0]);
+            Assert.assertEquals(expectedVehicleInformation.get(VRM)[1], actualVehicleInformation.get(VRM)[1]);
         }
     }
 
