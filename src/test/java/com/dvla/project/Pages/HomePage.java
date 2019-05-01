@@ -5,9 +5,9 @@ import org.openqa.selenium.By;
 
 public class HomePage extends Utility {
 
-    private By START_NOW_BUTTON = By.className("gem-c-button govuk-button govuk-button--start");
+    private By START_NOW_BUTTON = By.cssSelector("#get-started > a");
 
-    private String homeUrl = "https://www.gov.uk/get-vehicle-information-from-dvla";
+    final String homeUrl = "https://www.gov.uk/get-vehicle-information-from-dvla";
 
     public void goToHomepage() throws Throwable {
         goToPage(homeUrl);

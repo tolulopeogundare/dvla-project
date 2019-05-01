@@ -18,17 +18,16 @@ import java.util.TreeMap;
 public class Utility extends WebDriverHelper {
 
     @Getter
-    protected WebDriverWait wait;
+    public WebDriver driver = WebDriverHelper.getWebDriver();
     @Getter
-    protected WebDriver driver;
+    public WebDriverWait wait = new WebDriverWait(driver, 30);
+
     private Runner runner;
     private HomePage homePage;
     private VRMPage vrmPage;
     private ConfirmVehiclePage confirmVehiclePage;
 
-    protected Utility(Runner runner, HomePage homePage, VRMPage vrmPage, ConfirmVehiclePage confirmVehiclePage){
-        this.driver = WebDriverHelper.getWebDriver();
-        this.wait = new WebDriverWait(driver, 30);
+    public Utility(Runner runner, HomePage homePage, VRMPage vrmPage, ConfirmVehiclePage confirmVehiclePage){
         this.runner = runner;
         this.homePage = homePage;
         this.vrmPage = vrmPage;
@@ -46,13 +45,8 @@ public class Utility extends WebDriverHelper {
         return runner.getData();
     }
 
-    protected WebElement waitForExpectedElement(final By by){
+    public WebElement waitForExpectedElement(final By by){
         return wait.until(ExpectedConditions.presenceOfElementLocated(by));
-    }
-
-    public void verifyALl(){
-       // Object[] VRMs = allVehicleData.keySet().toArray();
-       // System.out.println("VRMSS = " + VRMs[0].toString());
     }
 
     public Map<String, String[]> findACarInformation(String VRM) throws Throwable {
