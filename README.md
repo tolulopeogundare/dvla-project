@@ -21,4 +21,5 @@
 
 -------Improvements / Nice to have---------------
 1. This framework can be improved by using spring boot, and create web service that would return the make and colour of a car based on request params. Also spring bean can be used to store all vehicle data loaded from csvs.
-2. At the moment accepted file types is .csv and .xls, this can be improved to also accept xlsx files as well for more flexibility.
+2. At the moment accepted file types is .csv and .xls, this needs to be improved to also accept xlsx files as well for more flexibility.
+3. Also logging needs to be added to when tests fail to help track and debug test failures quicker.
