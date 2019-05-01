@@ -12,7 +12,5 @@ public class VRMPage extends Utility {
         waitForExpectedElement(VRM_FIELD).sendKeys(VRM);
     }
 
-    public void clickContinue(){
-        waitForExpectedElement(CONTINUE_BTN).click();
-    }
+    public void clickContinue(){ waitForExpectedElement(CONTINUE_BTN).click(); }
 }

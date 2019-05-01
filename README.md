@@ -3,7 +3,7 @@
 2. The csv should have 3 columns that is comma separated e.g VRM,Make,Colour
 3. Excel file should also have 3 columns in this order VRM, Make, Colour
 4. By default, the first row of csv and excel file will be ignore as it is assumed to be the column header
-5. Files can be added to directory - /src/main/java/resources/Files
+5. Files can be added to directory - {user.dir}/files
 
 
 --------Pre-requisite to run tests---------------
@@ -20,5 +20,5 @@
 
 
 -------Improvements / Nice to have---------------
-1. This framework can be improved by using spring boot, and create service that would return the make and colour of a car based on request params. Also spring bean can be used to store all vehicle data.
-2. At the moment accepted file types is csv and xls, this can be improved to also accept xlsx files.
+1. This framework can be improved by using spring boot, and create web service that would return the make and colour of a car based on request params. Also spring bean can be used to store all vehicle data loaded from csvs.
+2. At the moment accepted file types is .csv and .xls, this can be improved to also accept xlsx files as well for more flexibility.

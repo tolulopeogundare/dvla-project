@@ -23,7 +23,7 @@ public class FileLoader {
     private int supportedFiles = 0;
     private int unsupportedFiles = 0;
 
-    private List<File> getCsvFilesFromDirectory(File directory){
+    private List<File> getFilesFromDirectory(File directory){
         List<File> collectedFiles = new ArrayList<>();
         Deque<File> remainingDirs = new ArrayDeque<>();
         if(directory.exists()) {
@@ -58,16 +58,16 @@ public class FileLoader {
         return files.getContentType(file);
     }
 
-    public void loadAllFiles(){
+    public void readAllFiles(){
         final long startTime = System.currentTimeMillis();
-        File directory = new File(System.getProperty("user.dir") + "/src/main/java/resources/Files");
+        File directory = new File(System.getProperty("user.dir") + "/files");
         LOGGER.info(String.format("Loading files from directory - %s", directory.getAbsolutePath()));
-        for(File file : getCsvFilesFromDirectory(directory)){
+        for(File file : getFilesFromDirectory(directory)){
             try {
                 if(file.getName().endsWith(".csv")){
                     readCsvFiles(file);
                 } else if(file.getName().endsWith(".xls")) {
-                    getExcelFile(file);
+                    readExcelFiles(file);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -81,6 +81,7 @@ public class FileLoader {
         try (BOMInputStream bis = new BOMInputStream(new FileInputStream(file), false)) {
             List<String> csvData = IOUtils.readLines(bis, StandardCharsets.UTF_8);
             csvData.remove(0);
+
             for(String value : csvData){
                 String [] values;
                 String [] info = new String [2];
@@ -92,7 +93,7 @@ public class FileLoader {
         }
     }
 
-    private static void getExcelFile(final File file) throws IOException {
+    private static void readExcelFiles(final File file) throws IOException {
         FileInputStream inputStream = new FileInputStream(file);
         Workbook workbook = null;
 
