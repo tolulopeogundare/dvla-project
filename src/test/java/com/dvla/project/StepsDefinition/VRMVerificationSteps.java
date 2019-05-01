@@ -1,6 +1,6 @@
 package com.dvla.project.StepsDefinition;
 
-import com.dvla.project.Files_Service.Runner;
+import com.dvla.project.Files_Service.FileLoader;
 import com.dvla.project.Utility.Utility;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
@@ -13,17 +13,17 @@ import java.util.TreeMap;
 
 public class VRMVerificationSteps {
 
-    private Runner runner;
+    private FileLoader fileLoader;
     private Utility utility;
 
-    public VRMVerificationSteps(Runner runner, Utility utility){
-        this.runner = runner;
+    public VRMVerificationSteps(FileLoader fileLoader, Utility utility){
+        this.fileLoader = fileLoader;
         this.utility = utility;
     }
 
     @Given("I load all supported files in configured directory")
     public void iLoadAllSupportedFilesInConfiguredDirectory(){
-        runner.loadAllFiles();
+        fileLoader.loadAllFiles();
     }
 
     @When("I retrieve all vehicles information in the files")
@@ -39,7 +39,6 @@ public class VRMVerificationSteps {
             Map<String, String[]> expectedVehicleInformation = new TreeMap<>();
             Map<String, String[]> actualVehicleInformation = utility.findACarInformation(VRM.toString());
             expectedVehicleInformation.put(VRM.toString(), vehicles.get(VRM.toString()));
-
             Assert.assertTrue(actualVehicleInformation.containsKey(VRM.toString()));
             Assert.assertEquals(expectedVehicleInformation.get(VRM)[0], actualVehicleInformation.get(VRM)[0]);
             Assert.assertEquals(expectedVehicleInformation.get(VRM)[1], actualVehicleInformation.get(VRM)[1]);
@@ -48,6 +47,6 @@ public class VRMVerificationSteps {
 
     @And("I get (.*) information for vehicle (.*)")
     public void IgetVehicleInformation(String Make, String VRM){
-        System.out.println("VEHICLE INFO = " + runner.getVehicleDetails(VRM, Make));
+        System.out.println("VEHICLE INFO = " + fileLoader.getVehicleDetails(VRM, Make));
     }
 }

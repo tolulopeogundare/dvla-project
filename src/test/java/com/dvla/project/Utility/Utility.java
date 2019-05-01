@@ -1,6 +1,6 @@
 package com.dvla.project.Utility;
 
-import com.dvla.project.Files_Service.Runner;
+import com.dvla.project.Files_Service.FileLoader;
 import com.dvla.project.Helpers.WebDriverHelper;
 import com.dvla.project.Pages.ConfirmVehiclePage;
 import com.dvla.project.Pages.HomePage;
@@ -21,13 +21,13 @@ public class Utility extends WebDriverHelper {
     @Getter
     public WebDriverWait wait = new WebDriverWait(driver, 30);
 
-    private Runner runner;
+    private FileLoader fileLoader;
     private HomePage homePage;
     private VRMPage vrmPage;
     private ConfirmVehiclePage confirmVehiclePage;
 
-    public Utility(Runner runner, HomePage homePage, VRMPage vrmPage, ConfirmVehiclePage confirmVehiclePage){
-        this.runner = runner;
+    public Utility(FileLoader fileLoader, HomePage homePage, VRMPage vrmPage, ConfirmVehiclePage confirmVehiclePage){
+        this.fileLoader = fileLoader;
         this.homePage = homePage;
         this.vrmPage = vrmPage;
         this.confirmVehiclePage = confirmVehiclePage;
@@ -41,7 +41,7 @@ public class Utility extends WebDriverHelper {
     }
 
     public Map<String, String []> retrieveAllVehicleInformation(){
-        return runner.getData();
+        return fileLoader.getData();
     }
 
     public WebElement waitForExpectedElement(final By by){
