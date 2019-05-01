@@ -11,12 +11,12 @@ import org.junit.Assert;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class VRMVerificationSteps {
+public class VehicleVerificationSteps {
 
     private FileLoader fileLoader;
     private Utility utility;
 
-    public VRMVerificationSteps(FileLoader fileLoader, Utility utility){
+    public VehicleVerificationSteps(FileLoader fileLoader, Utility utility){
         this.fileLoader = fileLoader;
         this.utility = utility;
     }

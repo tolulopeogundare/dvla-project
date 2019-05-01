@@ -20,10 +20,10 @@ import java.util.*;
 public class FileLoader {
     private static final Logger LOGGER = LoggerFactory.getLogger(FileLoader.class);
     private static Map<String, String []> data = new TreeMap<>();
+    private int supportedFiles = 0;
+    private int unsupportedFiles = 0;
 
-    private List<String> supportedMimeTypes = Arrays.asList("application/vnd.ms-excel", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "application/octet-stream");
-
-    public List<File> getCsvFilesFromDirectory(File directory){
+    private List<File> getCsvFilesFromDirectory(File directory){
         List<File> collectedFiles = new ArrayList<>();
         Deque<File> remainingDirs = new ArrayDeque<>();
         if(directory.exists()) {
@@ -40,10 +40,12 @@ public class FileLoader {
                             .append(" | Size(bytes)=" + file.length())
                             .append(" | Extension=" + file.getName().substring(file.getName().lastIndexOf(".")));
                     LOGGER.info(String.format("File %s Info : %s", fileNum, fileInfo));
-                    if(supportedMimeTypes.contains(getFileMimeType(file))){
+                    if(getFileMimeType(file).equals("application/octet-stream")){
                         collectedFiles.add(file);
+                        supportedFiles = supportedFiles + 1;
                     } else {
-                        LOGGER.info(String.format("Ignoring unsupported file %s", file.getName()));
+                        unsupportedFiles = unsupportedFiles + 1;
+                        LOGGER.info(String.format("Ignoring unsupported file | File name - %s | Files should be in .csv or .xls extension", file.getName()));
                     }
                 }
             }
@@ -60,26 +62,19 @@ public class FileLoader {
         final long startTime = System.currentTimeMillis();
         File directory = new File(System.getProperty("user.dir") + "/src/main/java/resources/Files");
         LOGGER.info(String.format("Loading files from directory - %s", directory.getAbsolutePath()));
-        int supportedFiles = 0;
-        int unsupportedFiles = 0;
         for(File file : getCsvFilesFromDirectory(directory)){
             try {
                 if(file.getName().endsWith(".csv")){
                     readCsvFiles(file);
-                    supportedFiles = supportedFiles + 1;
                 } else if(file.getName().endsWith(".xls")) {
                     getExcelFile(file);
-                    supportedFiles = supportedFiles + 1;
-                } else {
-                    unsupportedFiles = unsupportedFiles + 1;
-                    LOGGER.info(String.format("Ignoring %s | File not supported | Files should be in .csv or .xls extension", file.getName()));
                 }
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
         final long elapsedTime = System.currentTimeMillis() - startTime;
-        LOGGER.info(String.format("Processed %s files in %s ms. %s supported files loaded | %s unsupported files ignored", (supportedFiles + unsupportedFiles), elapsedTime, supportedFiles, unsupportedFiles));
+        LOGGER.info(String.format("Processed %s files in %s ms | %s supported files loaded | %s unsupported files ignored", (supportedFiles + unsupportedFiles), elapsedTime, supportedFiles, unsupportedFiles));
     }
 
     private static void readCsvFiles(final File file) throws IOException {
