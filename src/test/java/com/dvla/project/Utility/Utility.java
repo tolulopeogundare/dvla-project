@@ -13,7 +13,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.Map;
-import java.util.TreeMap;
 
 public class Utility extends WebDriverHelper {
 

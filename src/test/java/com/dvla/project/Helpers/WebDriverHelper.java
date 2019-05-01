@@ -44,7 +44,6 @@ public class WebDriverHelper extends EventFiringWebDriver {
         DesiredCapabilities capabilities = getChromeDesiredCapabilities();
         ChromeDriver chrome = new ChromeDriver(capabilities);
         chrome.manage().window().maximize();
-        //chrome.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         return chrome;
     }
 
