@@ -19,7 +19,7 @@ import java.util.*;
 public class Runner {
     private static final Logger LOGGER = LoggerFactory.getLogger(Runner.class);
     private static FilesReader filesReader = new FilesReader();
-    private static Map<String, String> data = new TreeMap<>();
+    private static Map<String, String []> data = new TreeMap<>();
 
     public void loadAllFiles(){
         File directory = new File(System.getProperty("user.dir") + "/src/main/java/resources/Files");
@@ -42,11 +42,14 @@ public class Runner {
     private static void readCsvFiles(final File file) throws IOException {
         try (BOMInputStream bis = new BOMInputStream(new FileInputStream(file), false)) {
             List<String> csvData = IOUtils.readLines(bis, StandardCharsets.UTF_8);
-            String[] values;
 
             for(String value : csvData){
+                String [] values;
+                String [] info = new String [2];
                 values = value.split(",");
-                data.put(values[0], values[1]);
+                info[0] = values[1];
+                info[1] = values[2];
+                data.put(values[0], info);
             }
         }
     }
@@ -68,10 +71,25 @@ public class Runner {
         for(int i=0 ; i < numOfRows ; i++){
             Row row = sheet.getRow(i +1);
             String VRM = row.getCell(0).getStringCellValue();
-            String Colour = row.getCell(1).getStringCellValue();
-            data.put(VRM, Colour);
+            String Make = row.getCell(1).getStringCellValue();
+            String Colour = row.getCell(2).getStringCellValue();
+
+            String [] info = new String[3] ;
+
+            info [0] = Make;
+            info [1] = Colour;
+            data.put(VRM, info);
         }
     }
 
-    private Map<String, String> getData(){ return data; }
+    public Map<String, String[]> getData(){ return data; }
+
+    public String getVehicleDetails(String VRM, String Attribute){
+        String [] value = data.get(VRM);
+        if(Attribute.equals("Make")){
+            return value[0];
+        } else{
+            return value[1];
+        }
+    }
 }
