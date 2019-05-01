@@ -2,6 +2,9 @@ package com.dvla.project.Utility;
 
 import com.dvla.project.Files_Service.Runner;
 import com.dvla.project.Helpers.WebDriverHelper;
+import com.dvla.project.Pages.ConfirmVehiclePage;
+import com.dvla.project.Pages.HomePage;
+import com.dvla.project.Pages.VRMPage;
 import lombok.Getter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -18,26 +21,29 @@ public class Utility extends WebDriverHelper {
     protected WebDriverWait wait;
     @Getter
     protected WebDriver driver;
+    private Runner runner;
+    private HomePage homePage;
+    private VRMPage vrmPage;
+    private ConfirmVehiclePage confirmVehiclePage;
 
-    protected Utility(){
+    protected Utility(Runner runner, HomePage homePage, VRMPage vrmPage, ConfirmVehiclePage confirmVehiclePage){
         this.driver = WebDriverHelper.getWebDriver();
         this.wait = new WebDriverWait(driver, 30);
+        this.runner = runner;
+        this.homePage = homePage;
+        this.vrmPage = vrmPage;
+        this.confirmVehiclePage = confirmVehiclePage;
     }
 
-    public Utility(Runner runner){
-        this.runner = runner;
-    }
+    public Utility(){ }
 
     public void goToPage(String url) throws Throwable {
         if(driver==null){ driver = getWebDriver(); }
         driver.navigate().to(url);
     }
 
-    private Runner runner;
-    private Map<String, String []> data = new TreeMap<>();
-
-    public void retrieveAllVehicleInformation(){
-        data = runner.getData();
+    public Map<String, String []> retrieveAllVehicleInformation(){
+        return runner.getData();
     }
 
     protected WebElement waitForExpectedElement(final By by){
@@ -45,7 +51,15 @@ public class Utility extends WebDriverHelper {
     }
 
     public void verifyALl(){
-       Object[] VRMs = data.keySet().toArray();
-       System.out.println("VRMSS = " + VRMs[0].toString());
+       // Object[] VRMs = allVehicleData.keySet().toArray();
+       // System.out.println("VRMSS = " + VRMs[0].toString());
+    }
+
+    public Map<String, String[]> findACarInformation(String VRM) throws Throwable {
+        homePage.goToHomepage();
+        homePage.clickStartNow();
+        vrmPage.inputVrm(VRM);
+        vrmPage.clickContinue();
+        return confirmVehiclePage.getVehicleInformation();
     }
 }

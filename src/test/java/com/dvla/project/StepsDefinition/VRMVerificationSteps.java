@@ -7,6 +7,9 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
+import java.util.List;
+import java.util.Map;
+
 public class VRMVerificationSteps {
 
     private Runner runner;
@@ -28,10 +31,13 @@ public class VRMVerificationSteps {
     }
 
     @Then("I verify each vehicle information matches what is on the website")
-    public void iVerifyEachVehicleInformation(){
-        utility.verifyALl();
+    public void iVerifyEachVehicleInformation() throws Throwable {
+        Map<String, String[]> vehicles = utility.retrieveAllVehicleInformation();
+        Object [] VRMs = vehicles.keySet().toArray();
+        for(Object VRM : VRMs){
+             utility.findACarInformation(VRM.toString());
+        }
     }
-
 
     @And("I get (.*) information for vehicle (.*)")
     public void IgetVehicleInformation(String Make, String VRM){
