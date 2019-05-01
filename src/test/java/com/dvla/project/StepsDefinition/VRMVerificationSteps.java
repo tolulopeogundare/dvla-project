@@ -6,9 +6,11 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.junit.Assert;
 
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class VRMVerificationSteps {
 
@@ -35,7 +37,10 @@ public class VRMVerificationSteps {
         Map<String, String[]> vehicles = utility.retrieveAllVehicleInformation();
         Object [] VRMs = vehicles.keySet().toArray();
         for(Object VRM : VRMs){
-             utility.findACarInformation(VRM.toString());
+            Map<String, String[]> expectedVehicleInformation = new TreeMap<>();
+            Map<String, String[]> actualVehicleInformation = utility.findACarInformation(VRM.toString());
+            expectedVehicleInformation.put(VRM.toString(), vehicles.get(VRM.toString()));
+            Assert.assertEquals(actualVehicleInformation, expectedVehicleInformation);
         }
     }
 

@@ -47,9 +47,9 @@ public class Runner {
                 String [] values;
                 String [] info = new String [2];
                 values = value.split(",");
-                info[0] = values[1];
-                info[1] = values[2];
-                data.put(values[0], info);
+                info[0] = values[1].toUpperCase();
+                info[1] = values[2].toUpperCase();
+                data.put(values[0].toUpperCase().replace(" ", ""), info);
             }
         }
     }
@@ -70,9 +70,9 @@ public class Runner {
 
         for(int i=0 ; i < numOfRows ; i++){
             Row row = sheet.getRow(i +1);
-            String VRM = row.getCell(0).getStringCellValue();
-            String Make = row.getCell(1).getStringCellValue();
-            String Colour = row.getCell(2).getStringCellValue();
+            String VRM = row.getCell(0).getStringCellValue().toUpperCase();
+            String Make = row.getCell(1).getStringCellValue().toUpperCase();
+            String Colour = row.getCell(2).getStringCellValue().toUpperCase();
 
             String [] info = new String[3] ;
 

@@ -13,7 +13,7 @@ public class ConfirmVehiclePage extends Utility {
     private By COLOUR = By.cssSelector("#pr3 > div > ul > li:nth-child(3) > span:nth-child(2) > strong");
 
     public Map<String, String[]> getVehicleInformation(){
-        final String vehicleVRM = waitForExpectedElement(VRM).getText().trim();
+        final String vehicleVRM = waitForExpectedElement(VRM).getText().trim().replace(" ", "");
         final String vehicleMake = waitForExpectedElement(MAKE).getText().trim();
         final String vehicleColour = waitForExpectedElement(COLOUR).getText().trim();
         Map<String, String[]> info = new TreeMap<>();
