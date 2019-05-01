@@ -10,17 +10,15 @@ import java.io.IOException;
 
 public class ScreenshotHelper extends Utility {
 
-    private String SCREENSHOT_FOLDER = System.getProperty("user.dir") + "\\screenshots\\";
+    private String SCREENSHOT_FOLDER = System.getProperty("user.dir") + "/screenshots";
 
     public void takeScreenshot(String vrm) throws IOException {
+        new File(SCREENSHOT_FOLDER).mkdir();
         File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(file, new File(SCREENSHOT_FOLDER + vrm + "_" + getDateTime().toString().replaceAll("[^0-9]", "") + ".png"));
+        FileUtils.copyFile(file, new File(SCREENSHOT_FOLDER + "/" + vrm + "_" + getDateTime().toString().replaceAll("[^0-9]", "") + ".png"));
     }
 
     public void doHousekeeping() throws IOException {
-        File dir = new File(SCREENSHOT_FOLDER);
-        for(File file: dir.listFiles())
-            if (!file.isDirectory())
-                file.delete();
+        FileUtils.deleteDirectory(new File(SCREENSHOT_FOLDER));
     }
 }

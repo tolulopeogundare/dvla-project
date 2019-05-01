@@ -49,11 +49,11 @@ public class VehicleVerificationSteps {
             Map<String, String[]> actualVehicleInformation = utility.findACarInformation(VRM.toString());
             expectedVehicleInformation.put(VRM.toString(), vehicles.get(VRM.toString()));
 
+            screenshotHelper.takeScreenshot(VRM.toString());
+
             Assert.assertTrue(actualVehicleInformation.containsKey(VRM.toString()));
             Assert.assertEquals(expectedVehicleInformation.get(VRM.toString())[0], actualVehicleInformation.get(VRM.toString())[0]);
             Assert.assertEquals(expectedVehicleInformation.get(VRM.toString())[1], actualVehicleInformation.get(VRM.toString())[1]);
-
-            screenshotHelper.takeScreenshot(VRM.toString());
         }
     }
 }
