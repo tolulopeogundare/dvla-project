@@ -1,4 +1,4 @@
-package com.dvla.project.Files_Service;
+package com.dvla.project.FilesService;
 
 import lombok.Builder;
 import lombok.Data;
@@ -10,6 +10,5 @@ import java.util.List;
 public class FileConfig {
 
     private List<String> VRM;
-
     private List<String> Colour;
 }

@@ -1,4 +1,4 @@
-package com.dvla.project.Files_Service;
+package com.dvla.project.FilesService;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.io.input.BOMInputStream;
