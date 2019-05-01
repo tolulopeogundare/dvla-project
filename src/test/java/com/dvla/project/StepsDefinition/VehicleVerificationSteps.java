@@ -1,13 +1,15 @@
 package com.dvla.project.StepsDefinition;
 
 import com.dvla.project.FilesService.FileLoader;
+import com.dvla.project.Helpers.ScreenshotHelper;
 import com.dvla.project.Utility.Utility;
-import cucumber.api.java.en.And;
+import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
 
+import java.io.IOException;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -15,14 +17,21 @@ public class VehicleVerificationSteps {
 
     private FileLoader fileLoader;
     private Utility utility;
+    private ScreenshotHelper screenshotHelper;
 
-    public VehicleVerificationSteps(FileLoader fileLoader, Utility utility){
+    public VehicleVerificationSteps(FileLoader fileLoader, Utility utility, ScreenshotHelper screenshotHelper){
         this.fileLoader = fileLoader;
         this.utility = utility;
+        this.screenshotHelper = screenshotHelper;
+    }
+
+    @Before
+    public void houseKeeping() throws IOException {
+        screenshotHelper.doHousekeeping();
     }
 
     @Given("I load all supported files in configured directory")
-    public void iLoadAllSupportedFilesInConfiguredDirectory(){
+    public void iLoadAllSupportedFilesInConfiguredDirectory() throws IOException {
         fileLoader.readAllFiles();
     }
 
@@ -43,6 +52,8 @@ public class VehicleVerificationSteps {
             Assert.assertTrue(actualVehicleInformation.containsKey(VRM.toString()));
             Assert.assertEquals(expectedVehicleInformation.get(VRM.toString())[0], actualVehicleInformation.get(VRM.toString())[0]);
             Assert.assertEquals(expectedVehicleInformation.get(VRM.toString())[1], actualVehicleInformation.get(VRM.toString())[1]);
+
+            screenshotHelper.takeScreenshot(VRM.toString());
         }
     }
 }

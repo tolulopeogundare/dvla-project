@@ -12,6 +12,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.sql.Timestamp;
+import java.util.Date;
 import java.util.Map;
 
 public class Utility extends WebDriverHelper {
@@ -46,6 +48,13 @@ public class Utility extends WebDriverHelper {
 
     public WebElement waitForExpectedElement(final By by){
         return wait.until(ExpectedConditions.presenceOfElementLocated(by));
+    }
+
+    public Timestamp getDateTime(){
+        Date date = new Date();
+        long time = date.getTime();
+        return new Timestamp(time);
+
     }
 
     public Map<String, String[]> findACarInformation(String VRM) throws Throwable {
